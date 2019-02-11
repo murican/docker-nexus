@@ -5,7 +5,7 @@ LABEL vendor=Sonatype \
   com.sonatype.license="Apache License, Version 2.0" \
   com.sonatype.name="Nexus Repository Manager base image"
 
-ARG NEXUS_VERSION=3.13.0-01
+ARG NEXUS_VERSION=3.15.2-01
 ARG JAVA_VERSION=8u171
 ARG JAVA_ALPINE_VERSION=8.171.11-r2
 
