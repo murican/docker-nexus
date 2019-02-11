@@ -6,8 +6,8 @@ LABEL vendor=Sonatype \
   com.sonatype.name="Nexus Repository Manager base image"
 
 ARG NEXUS_VERSION=3.15.2-01
-ARG JAVA_VERSION=8u171
-ARG JAVA_ALPINE_VERSION=8.171.11-r2
+ARG JAVA_VERSION=8u191
+ARG JAVA_ALPINE_VERSION=8.191.12-r0
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
 RUN apk add --no-cache curl tar shadow
