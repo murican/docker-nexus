@@ -1,25 +1,20 @@
 # nexus
 
-A Dockerfile for Sonatype Nexus Repository Manager 3 based on an Alpine Base Image
+Build a Docker Image for Sonatype Nexus Repository Manager OSS based on an Alpine Base Image
+
+Build the image:
+```
+$ docker build -t nexus .
+```
 
 To run:
-
 ```
 $ docker run -d -p 8081:8081 --name nexus murican/nexus
 ```
 
 To test:
-
 ```
 $ curl -u admin:admin123 http://localhost:8081/service/metrics/ping
-```
-
-Build the image:
-
-Copy the Dockerfile and do the build:
-
-```
-$ docker build -t nexus .
 ```
 
 
