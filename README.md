@@ -12,15 +12,20 @@ To run:
 $ docker run -d -p 8081:8081 --name nexus murican/nexus
 ```
 
+Get the Password
+```
+$ docker exec -t nexus  /bin/sh -c "cat /nexus-data/admin.password"
+``` 
+
 To test:
 ```
-$ curl -u admin:admin123 http://localhost:8081/service/metrics/ping
+$ curl -u admin:pass http://localhost:8081/service/metrics/ping
 ```
 
 
 ## Notes
 
-* Default credentials are: `admin` / `admin123` ***CHANGE PASS***
+* The Admin Password is generated on startup and located in /nexus-data/admin.password  ***CHANGE PASS***
 
 * It can take some time (2-3 minutes) for the service to launch in a
 new container.  You can tail the log to determine once Nexus is ready:
