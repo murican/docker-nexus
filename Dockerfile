@@ -4,7 +4,7 @@ MAINTAINER Jens Schneider <murican87@gmail.com>
 LABEL vendor=Sonatype \
   com.sonatype.license="Apache License, Version 2.0"
 
-ARG NEXUS_VERSION=3.17.0-01
+ARG NEXUS_VERSION=3.18.0-01
 ARG JAVA_ALPINE_VERSION=8.212.04-r0
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
