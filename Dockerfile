@@ -5,14 +5,14 @@ LABEL vendor=Sonatype \
   com.sonatype.license="Apache License, Version 2.0"
 
 ARG NEXUS_VERSION=3.28.1-01
-ARG JAVA_ALPINE_VERSION=8.242.08-r0
+ARG JAVA_ALPINE_VERSION=11.0.9_p11-r0
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories
 RUN apk update && apk add --no-cache curl tar shadow
 
 ENV LANG=C.UTF-8 \
-  JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
-  PATH=${PATH}:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin \
+  JAVA_HOME=/usr/lib/jvm/java-11-openjdk \
+  PATH=${PATH}:/usr/lib/jvm/java-11-openjdk/jre/bin:/usr/lib/jvm/java-11-openjdk/bin \
   NEXUS_DOWNLOAD_URL=https://download.sonatype.com/nexus/3/nexus-${NEXUS_VERSION}-unix.tar.gz \
   NEXUS_HOME=${SONATYPE_DIR}/nexus \
   NEXUS_DATA=/nexus-data \
@@ -30,7 +30,7 @@ RUN { \
 
 RUN set -x \
   && apk add --no-cache \
-    openjdk8="$JAVA_ALPINE_VERSION" \
+    openjdk11="$JAVA_ALPINE_VERSION" \
   && [ "$JAVA_HOME" = "$(docker-java-home)" ]
 
 RUN mkdir -p ${NEXUS_HOME} \
