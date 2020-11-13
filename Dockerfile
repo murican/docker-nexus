@@ -7,8 +7,8 @@ LABEL vendor=Sonatype \
 ARG NEXUS_VERSION=3.21.1-01
 ARG JAVA_ALPINE_VERSION=8.242.08-r0
 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
-RUN apk add --no-cache curl tar shadow
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories
+RUN apk update && apk add --no-cache curl tar shadow
 
 ENV LANG=C.UTF-8 \
   JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
