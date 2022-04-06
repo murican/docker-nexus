@@ -1,13 +1,13 @@
-FROM alpine:latest
+FROM alpine:3.15
 MAINTAINER Jens Schneider <murican87@gmail.com>
 
 LABEL vendor=Sonatype \
   com.sonatype.license="Apache License, Version 2.0"
 
-ARG NEXUS_VERSION=3.30.0-01
-ARG JAVA_ALPINE_VERSION=8.275.01-r0
+ARG NEXUS_VERSION=3.38.1-01
+ARG JAVA_ALPINE_VERSION=8.302.08-r2
 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.15/community' >> /etc/apk/repositories
 RUN apk update && apk add --no-cache curl tar shadow
 
 ENV LANG=C.UTF-8 \
